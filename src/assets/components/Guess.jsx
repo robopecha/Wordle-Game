@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {range} from '../utils'
 
 
 function Guess({item}) {
@@ -9,7 +9,8 @@ function Guess({item}) {
       {item
         ? [...item].map(letter =>
             <span key={Math.random()} className="cell">{letter}</span>)
-        : <span className="cell"></span>
+        : range(5).map(col =>
+            <span key={col} className="cell"></span>)
       }
     </p>
   );
