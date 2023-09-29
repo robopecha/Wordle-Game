@@ -1,6 +1,6 @@
 import React from 'react';
 import InputBox from './InputBox';
-import GuessList from './GuessList';
+import GuessResults from './GuessResults';
 
 import {sample} from '../utils'
 import {WORDS} from '../data/data'
@@ -19,7 +19,7 @@ function Game() {
 
   return (
     <>
-     <GuessList guessList={guessList} />
+     <GuessResults guessList={guessList} />
      <InputBox AddGuess={AddGuess} />
     </>
   );
