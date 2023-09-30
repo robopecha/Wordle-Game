@@ -1,6 +1,6 @@
 import React from 'react';
 
-function InputBox({AddGuess}) {
+function InputBox({ AddGuess, won, ended }) {
   const [newGuess, setNewGuess] = React.useState('');
 
 
@@ -15,6 +15,7 @@ function InputBox({AddGuess}) {
       >
         <label htmlFor='guess-input'>Enter guess:</label>
         <input
+          disabled={ended || won}
           id='guess-input'
           name='guess'
           type='text'

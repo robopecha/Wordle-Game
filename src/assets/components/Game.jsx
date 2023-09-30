@@ -1,9 +1,11 @@
 import React from 'react';
 import InputBox from './InputBox';
 import GuessResults from './GuessResults';
+import HappyEnding from './HappyEnding';
+import SadEnding from './SadEnding';
 
-import {sample} from '../utils'
-import {WORDS} from '../data/data'
+import { sample } from '../../utils'
+import { WORDS } from '../../data'
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -17,10 +19,17 @@ function Game() {
     setGuesslist([...guessList, newGuess]);
   }
 
+  let won = false;
+  let ended = false;
+  if (guessList.length === 6) ended = true;
+  if (guessList.includes(answer)) won = true;
+
   return (
     <>
-     <GuessResults guessList={guessList} />
-     <InputBox AddGuess={AddGuess} />
+     <GuessResults guessList={guessList} answer={answer} />
+     <InputBox AddGuess={AddGuess} won={won} ended={ended} />
+     {won && <HappyEnding num={guessList.length} />}
+     {ended && !won && <SadEnding answer={answer} />}
     </>
   );
 }

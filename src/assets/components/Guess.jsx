@@ -1,14 +1,16 @@
 import React from 'react';
-import {range} from '../utils'
+import { range } from '../../utils'
+import { checkGuess } from '../../game-helpers';
 
 
-function Guess({item}) {
+function Guess({ guess, answer }) {
+  const result = checkGuess(guess, answer);
 
   return (
     <p className="guess">
-      {item
-        ? [...item].map(letter =>
-            <span key={Math.random()} className="cell">{letter}</span>)
+      {guess
+        ? guess.split('').map((letter, index) =>
+            <span key={Math.random()} className={`cell ${result[index].status}`}>{letter}</span>)
         : range(5).map(col =>
             <span key={col} className="cell"></span>)
       }

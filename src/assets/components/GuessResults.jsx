@@ -1,14 +1,13 @@
 import React from 'react';
-import {range} from '../utils'
+import { range } from '../../utils'
 import Guess from './Guess';
 
-function GuessResults({guessList}) {
-
+function GuessResults({ guessList, answer }) {
 
   return (
     <div className="guess-results">
-      {guessList.map(item =>
-        <Guess key={Math.random()} item={item} />)
+      {guessList.map(guess =>
+        <Guess key={Math.random()} guess={guess} answer={answer} />)
       }
       {range(6-guessList.length).map(row =>
         <Guess key={row} />)}
@@ -17,6 +16,3 @@ function GuessResults({guessList}) {
 }
 
 export default GuessResults;
-
-
-
