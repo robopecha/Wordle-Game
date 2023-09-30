@@ -8,14 +8,26 @@ function Guess({ guess, answer }) {
 
   return (
     <p className="guess">
-      {guess
-        ? guess.split('').map((letter, index) =>
-            <span key={index} className={`cell ${result[index].status}`}>{letter}</span>)
-        : range(5).map(num =>
-            <span key={num} className="cell"></span>)
-      }
+      {range(5).map(num =>
+        result
+        ? <span key={num} className={`cell ${result[num].status}`}>{result[num].letter}</span>
+        : <span key={num} className="cell"></span>
+        )}
     </p>
   );
 }
 
 export default Guess;
+
+
+
+// my original version before refactoring:
+
+// <p className="guess">
+//   {guess
+//     ? guess.split('').map((letter, index) =>
+//         <span key={index} className={`cell ${result[index].status}`}>{letter}</span>)
+//     : range(5).map(num =>
+//         <span key={num} className="cell"></span>)
+//   }
+// </p>
