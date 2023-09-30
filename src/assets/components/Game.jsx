@@ -10,7 +10,7 @@ import { WORDS } from '../../data'
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
 // To make debugging easier, we'll log the solution in the console.
-// console.info({ answer });
+console.info({ answer });
 
 function Game() {
   const [guessList, setGuesslist] = React.useState([]);
@@ -21,8 +21,8 @@ function Game() {
 
   let won = false;
   let ended = false;
-  if (guessList.length === 6) ended = true;
   if (guessList.includes(answer)) won = true;
+  if (guessList.length === 6) ended = true;
 
   return (
     <>

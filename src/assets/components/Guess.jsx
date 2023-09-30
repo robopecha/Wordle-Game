@@ -11,8 +11,8 @@ function Guess({ guess, answer }) {
       {guess
         ? guess.split('').map((letter, index) =>
             <span key={index} className={`cell ${result[index].status}`}>{letter}</span>)
-        : range(5).map(col =>
-            <span key={col} className="cell"></span>)
+        : range(5).map(num =>
+            <span key={num} className="cell"></span>)
       }
     </p>
   );

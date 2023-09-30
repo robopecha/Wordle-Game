@@ -5,7 +5,7 @@ function HappyEnding({ num }) {
     <div className="happy banner">
       <p>
         <strong>Congratulations!</strong> Got it in
-        <strong> {num} guesses</strong>.
+        <strong> {num === 1 ? '1 guess!' : `${num} guesses`}</strong>.
       </p>
     </div>
   );

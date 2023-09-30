@@ -16,3 +16,11 @@ function GuessResults({ guessList, answer }) {
 }
 
 export default GuessResults;
+
+
+
+{/* <div className="guess-results">
+  {range(6).map((num) => (
+    <Guess key={num} guess={guessList[num]} answer={answer} />
+  ))}
+</div> */}
