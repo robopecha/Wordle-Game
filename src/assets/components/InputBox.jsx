@@ -1,6 +1,6 @@
 import React from 'react';
 
-function InputBox({ AddGuess, won, ended }) {
+function InputBox({ addGuess, ended }) {
   const [newGuess, setNewGuess] = React.useState('');
 
 
@@ -8,14 +8,14 @@ function InputBox({ AddGuess, won, ended }) {
     <div>
       <form onSubmit={event => {
         event.preventDefault();
-        AddGuess(newGuess);
+        addGuess(newGuess);
         setNewGuess('');
         }}
         className="guess-input-wrapper"
       >
         <label htmlFor='guess-input'>Enter guess:</label>
         <input
-          disabled={ended || won}
+          disabled={ended}
           required
           id='guess-input'
           name='guess'

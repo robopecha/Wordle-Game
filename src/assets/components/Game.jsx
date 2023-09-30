@@ -15,19 +15,17 @@ console.info({ answer });
 function Game() {
   const [guessList, setGuesslist] = React.useState([]);
 
-  function AddGuess(newGuess) {
+  function addGuess(newGuess) {
     setGuesslist([...guessList, newGuess]);
   }
 
-  let won = false;
-  let ended = false;
-  if (guessList.includes(answer)) won = true;
-  if (guessList.length === 6) ended = true;
+  let won = guessList.includes(answer);
+  let ended = won || guessList.length === 6;
 
   return (
     <>
      <GuessResults guessList={guessList} answer={answer} />
-     <InputBox AddGuess={AddGuess} won={won} ended={ended} />
+     <InputBox AddGuess={addGuess} ended={ended} />
      {won && <HappyEnding num={guessList.length} />}
      {ended && !won && <SadEnding answer={answer} />}
     </>
