@@ -6,8 +6,8 @@ function GuessResults({ guessList, answer }) {
 
   return (
     <div className="guess-results">
-      {guessList.map(guess =>
-        <Guess key={Math.random()} guess={guess} answer={answer} />)
+      {guessList.map((guess, index) =>
+        <Guess key={index} guess={guess} answer={answer} />)
       }
       {range(6-guessList.length).map(row =>
         <Guess key={row} />)}
