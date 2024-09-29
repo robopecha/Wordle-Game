@@ -1,11 +1,5 @@
-/**
- * Thanks to Github user dylano for supplying a more-accurate
- * solving algorithm!
- */
-
 export function checkGuess(guess, answer) {
-  // This constant is a placeholder that indicates we've successfully
-  // dealt with this character (it's correct, or misplaced).
+
   const SOLVED_CHAR = '✓';
 
   if (!guess) {
@@ -17,7 +11,7 @@ export function checkGuess(guess, answer) {
 
   const result = [];
 
-  // Step 1: Look for correct letters.
+  // look for correct letters.
   for (let i = 0; i < guessChars.length; i++) {
     if (guessChars[i] === answerChars[i]) {
       result[i] = {
@@ -29,8 +23,7 @@ export function checkGuess(guess, answer) {
     }
   }
 
-  // Step 2: look for misplaced letters. If it's not misplaced,
-  // it must be incorrect.
+  // look for misplaced letters.
   for (let i = 0; i < guessChars.length; i++) {
     if (guessChars[i] === SOLVED_CHAR) {
       continue;

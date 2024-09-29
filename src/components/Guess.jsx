@@ -1,6 +1,6 @@
 import React from 'react';
-import { range } from '../../utils'
-import { checkGuess } from '../../game-helpers';
+import { range } from '../utils'
+import { checkGuess } from '../game-helpers';
 
 
 function Guess({ guess, answer }) {

@@ -4,12 +4,10 @@ import GuessResults from './GuessResults';
 import HappyEnding from './HappyEnding';
 import SadEnding from './SadEnding';
 
-import { sample } from '../../utils'
-import { WORDS } from '../../data'
+import { sample } from '../utils'
+import { WORDS } from '../data'
 
-// Pick a random word on every pageload.
 const answer = sample(WORDS);
-// To make debugging easier, we'll log the solution in the console.
 console.info({ answer });
 
 function Game() {
@@ -25,7 +23,7 @@ function Game() {
   return (
     <>
      <GuessResults guessList={guessList} answer={answer} />
-     <InputBox AddGuess={addGuess} ended={ended} />
+     <InputBox addGuess={addGuess} ended={ended} />
      {won && <HappyEnding num={guessList.length} />}
      {ended && !won && <SadEnding answer={answer} />}
     </>

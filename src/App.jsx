@@ -1,5 +1,5 @@
-import Game from './assets/components/Game';
-import Header from './assets/components/Header';
+import Game from './components/Game';
+import Header from './components/Header';
 
 function App() {
   return (

@@ -1,6 +1,3 @@
-/*
-  Theme and global variables
-*/
 html {
   overflow-y: scroll;
 
@@ -17,9 +14,7 @@ html {
   --color-gray-900: hsl(0deg 0% 90%);
 }
 
-/*
-  Custom styles
-*/
+
 body {
   font-family: sans-serif;
 }
@@ -108,8 +103,7 @@ h1 {
 }
 
 /*
-  Round the corners for the 4 cells at the very corners of
-  the game board
+rounded corners
 */
 .guess:first-of-type .cell:first-of-type {
   --radius: 4px 0px 0px 0px;
@@ -198,11 +192,7 @@ h1 {
 }
 
 /*
-  Modal styles
-
-  HACK: I'm doing this in a quick and dirty way.
-  Later in the course, we'll see my preferred way of building
-  modals in React.
+simple modals
 */
 [data-reach-dialog-content] {
   position: relative;
@@ -221,7 +211,7 @@ h1 {
 }
 
 /*
-  Keyframe animations
+keyframe animations
 */
 @keyframes slideUp {
   from {
