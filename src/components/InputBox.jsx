@@ -3,6 +3,12 @@ import React from 'react';
 function InputBox({ addGuess, ended }) {
   const [newGuess, setNewGuess] = React.useState('');
 
+  const id = React.useId();
+  const inputRef = React.useRef();
+
+  React.useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   return (
     <div>
@@ -13,11 +19,12 @@ function InputBox({ addGuess, ended }) {
         }}
         className="guess-input-wrapper"
       >
-        <label htmlFor='guess-input'>Enter guess:</label>
+        <label htmlFor='id'>Enter guess:</label>
         <input
+          id={id}
+          ref={inputRef}
           disabled={ended}
           required
-          id='guess-input'
           name='guess'
           type='text'
           pattern='[A-Za-z]{5}'
