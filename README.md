@@ -15,4 +15,5 @@ Play it here: https://wordlelike.netlify.app
     
 Made with:  
 - React.js, using Vite
+- JavaScript
 - HTML, CSS
